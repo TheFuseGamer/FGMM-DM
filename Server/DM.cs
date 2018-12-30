@@ -94,7 +94,7 @@ namespace FGMM.Gamemode.DM.Server
 
         public void HandleDisconnect(Player player)
         {
-            throw new NotImplementedException();
+            GameController?.ProcessDisconnectionEvent(player);
         }
 
         public bool HandleTeamJoinRequest(Player player, int team)

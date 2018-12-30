@@ -79,6 +79,9 @@ namespace FGMM.Gamemode.DM.Server.Controllers
             if (player == null)
                 return;
             AlivePlayers.Remove(player);
+
+            if (AlivePlayers.Count <= 1)
+                Events.Raise(ServerEvents.EndMission);
         }
 
         public bool IsGameTied()
